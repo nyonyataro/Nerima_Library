@@ -5,20 +5,20 @@ from datetime import datetime
 import requests
 import os
 
-def set_selenium():
-    #selenium
-    # user_profile = (r'C:\Users\Panasonic\Desktop\Python\money forward\userdata')
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    # options.add_argument('–profile-directory=' + user_profile)
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--window-size=1920,1080')
-    options.add_argument("--disable-dev-shm-usage")
-    UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
-    options.add_argument("--user-agent=" + UA)
-    driver = webdriver.Chrome(r'/app/.chromedriver/bin/chromedriver', options=options)
-    # driver =  webdriver.Chrome(r'C:\Users\Panasonic\Desktop\Python\money forward\driver\chromedriver.exe', options=options)
+
+#selenium
+# user_profile = (r'C:\Users\Panasonic\Desktop\Python\money forward\userdata')
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+# options.add_argument('–profile-directory=' + user_profile)
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument('--window-size=1920,1080')
+options.add_argument("--disable-dev-shm-usage")
+UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
+options.add_argument("--user-agent=" + UA)
+driver = webdriver.Chrome(r'/app/.chromedriver/bin/chromedriver', options=options)
+# driver =  webdriver.Chrome(r'C:\Users\Panasonic\Desktop\Python\money forward\driver\chromedriver.exe', options=options)
 
 
 def line_notify(message:str):
@@ -62,7 +62,6 @@ if run_every_three_hours():
     print('この時間には実行しません')
     exit()
 
-set_selenium()
 move_to_search_resault('激変','上田晋也')
 judge_book_existence('激変')
 
